@@ -1,22 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* OR */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* OR */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 .red {
   color: #0097d7;
 }
 
-
 @media (max-width: 800px) {
   .jcom-section {
     flex-direction: column;
     justify-content: center;
-            align-items: center;
-    padding: 40px 60px;
+    align-items: center;
+    padding: 40px 0px;
     gap: 40px;
   }
 }
+
 @media (max-width: 445px) {
-    .jcom-section wi{
-        width: 100%;
-    }
+  .jcom-section wi {
+    width: 100%;
+  }
 }
 
 /* LEFT */
@@ -24,7 +29,7 @@
   display: flex;
   flex-direction: row;
   gap: 60px;
-  padding: 60px 60px;
+  padding: 60px 40px;
   background: #fff;
   align-items: flex-start;
   width: 100%;
@@ -33,15 +38,67 @@
 }
 
 /* Prevent flex children from overflowing their container */
-.jcom-section > * {
+.jcom-section>* {
   min-width: 0;
+}
+
+/* Responsive range 730-600px - shift jcom-section left and fix layout issues */
+@media (max-width: 730px) and (min-width: 600px) {
+  .jcom-section {
+    /* max-width: 70%; */
+    margin: 0;
+    padding: 60px 40px;
+    gap: 40px;
+  }
+
+  .jcom-left {
+    flex: 0 0 45%;
+  }
+
+  .jcom-right {
+    flex: 1;
+  }
+
+  .jcom-cta {
+    max-width: 70%;
+    margin: 40px 0;
+  }
+}
+
+
+/* Fix jcom-section issues between 850-600px */
+@media (max-width: 850px) and (min-width: 600px) {
+  .jcom-section {
+    flex-direction: row;
+    gap: 30px;
+    padding: 50px 40px;
+  }
+
+  .jcom-left h2 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .stats-card {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .stat h3 {
+    font-size: 24px;
+  }
+
+  .desc {
+    font-size: 14px;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
   .jcom-section {
     flex-direction: column;
     padding: 40px 60px;
-            align-items: center;
+    align-items: center;
     gap: 40px;
   }
 }
@@ -68,10 +125,10 @@
 }
 
 .desc {
-  font-size: 15px;
-  color: #333;
+  font-size: 14px;
+  color: black;
   margin-bottom: 30px;
-  max-width: 420px;
+
 }
 
 .stats-card {
@@ -126,7 +183,7 @@
 }
 
 .jcom-cta p {
-    text-align: center;
+  text-align: start;
   font-size: 22px;
   font-weight: 700;
 }
@@ -142,7 +199,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 940px) {
   .jcom-cta {
     flex-direction: column;
     text-align: center;
@@ -150,44 +207,49 @@
     max-width: 80%;
     padding: 40px 60px;
     gap: 20px;
-
   }
 }
-
-
-
 
 /* 
 -------------------3steps to Success---------------------------  */
 
 .head {
-    width: auto;
-    height: auto;
-    background: #0097d7;
-    text-align: center;
-    margin-bottom: 40px;
-    padding: 60px 60px;
-    display: flex;
-    flex-direction: column;justify-content: center;
-    color: #fff;
+  width: auto;
+  height: auto;
+  background: #0097d7;
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 60px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
 }
 
-
-.head_text h1{
-    font-size: 50px;
+/* Responsive range 730-600px - shift steps section left */
+@media (max-width: 730px) and (min-width: 600px) {
+  .head {
+    /* max-width: 70%; */
+    margin: 0 0 40px 0;
+    padding: 60px 40px;
+  }
 }
-.head_text p{
-    font-size: 25px;
-    color: #fff;
-    margin-top: 10px;
+
+.head_text h1 {
+  font-size: 50px;
 }
 
+.head_text p {
+  font-size: 25px;
+  color: #fff;
+  margin-top: 10px;
+}
 
 .steps-section {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-bottom: 60px ;
+  padding-bottom: 60px;
   padding-top: 60px;
   color: #fff;
 }
@@ -199,11 +261,12 @@
   position: relative;
 }
 
-#f  {
-    border-right: 2px solid rgba(255, 255, 255, 0.5);
-}   
-#s  {
-    border-right: 2px solid rgba(255, 255, 255, 0.5);
+#f {
+  border-right: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+#s {
+  border-right: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 @media (max-width: 800px) {
@@ -216,19 +279,21 @@
     gap: 40px;
   }
 }
-@media (max-width: 527px){
-    #f  {
-    border-right: none;
-}   
-#s  {
-    border-right: none;
-}
 
-.steps-section {
+@media (max-width: 527px) {
+  #f {
+    border-right: none;
+  }
+
+  #s {
+    border-right: none;
+  }
+
+  .steps-section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20px ;
+    padding-bottom: 20px;
     padding-top: 20px;
   }
 }
@@ -275,6 +340,7 @@
   line-height: 1.4;
   opacity: 0.95;
 }
+
 /* Button wrapper */
 .cta-button {
   display: flex;
@@ -307,13 +373,22 @@
 }
 
 .testimonial-wrapper {
-  margin-top: -60px;
-  background-color: #0097d7;
+  margin-top: 0px;
   padding: 60px 0;
   display: flex;
   flex-direction: column;
   gap: 40px;
   overflow-x: hidden;
+}
+
+/* Responsive range 730-600px - shift testimonial wrapper left */
+@media (max-width: 730px) and (min-width: 600px) {
+  /* .testimonial-wrapper {
+    max-width: 70%;
+    margin-top: -60px;
+    margin-left: 0;
+    margin-right: auto; */
+  /* } */
 }
 
 /* MARQUEE */
@@ -363,7 +438,7 @@
   height: 54px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(255,255,255,0.6);
+  border: 2px solid rgba(255, 255, 255, 0.6);
 }
 
 .card-footer h4 {
@@ -392,13 +467,23 @@
 }
 
 @keyframes scroll-left {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes scroll-right {
-  from { transform: translateX(-50%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* RESPONSIVE */
@@ -414,8 +499,6 @@
   }
 }
 
-
-
 .disclaimer {
   font-size: 12px;
   color: #fff;
@@ -424,12 +507,19 @@
   text-align: center;
 }
 
-
-
 .bni-footer {
-  background: #6d6e71;
+  background: black;
   color: #fff;
   font-family: Arial, sans-serif;
+}
+
+/* Responsive range 730-600px - shift footer left */
+@media (max-width: 730px) and (min-width: 600px) {
+  .bni-footer {
+    /* max-width: 70%; */
+    margin-left: 0;
+    margin-right: auto;
+  }
 }
 
 /* TOP */
